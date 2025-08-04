@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+string s="";
+string s2="sin(";
+string s3="";
+vector<string>vt;
+//vt.push_back("x");
+string A(int n,int i)
+{
+if(n+1==i)return s;
+s=s+s2;
+ string p=to_string(i);
+ s=s+p;
+  if((i%2==1)&&(i<n))
+ s=s+"-"; 
+ else if(i%2==0&&i<n)
+ s=s+"+";
+ A(n,i+1);
+
+ s=s+")";
+return s;
+}
+string S(int n,int j)
+{
+    if(n==0)return s3;
+    if(n!=1)
+    s3=s3+"(";
+     S(n-1,j+1);
+    string p=A(n,1);
+    s="";
+    s3=s3+p;
+    s3=s3+"+";
+    
+    s3=s3+to_string(j);
+   if(j!=1)
+    s3=s3+")";
+    
+return s3;
+}
+int  main()
+{
+int n;
+cin>>n;
+string x=S(n,1);
+cout<<x<<endl;
+}

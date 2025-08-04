@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool ispalindrom(string v, long long int first, long long int sz, long long int last) {
+    if (first >= sz)
+        return true;
+    else if (v[first] != v[last])
+        return false;
+    else
+        return ispalindrom(v, first + 1, sz, last - 1);
+}
+
+int main() 
+{
+    long long int t;
+    cin >> t;
+    while (t--)
+ {
+        long long int n;
+        cin >> n;
+
+        long long int ct = 0;
+        while (1)
+ {
+            string x = to_string(n);
+            if (!ispalindrom(x, 0, x.size(), x.size() - 1)) {
+                reverse(x.begin(), x.end());
+                long long int num = stoll(x);
+                n = n + num;
+                ct++;
+            } else {
+                break;
+            }
+        }
+        cout << ct << " " << n << endl;
+    }
+    return 0;
+}

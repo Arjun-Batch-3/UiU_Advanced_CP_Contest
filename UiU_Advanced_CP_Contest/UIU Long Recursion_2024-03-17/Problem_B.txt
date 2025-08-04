@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void Root()
+{
+    long long int num;
+    if (!(cin>>num)) return;
+    Root();
+    cout<<fixed<<setprecision(4)<<sqrt(num)<<endl; 
+}
+
+int main() 
+{
+    Root();
+    return 0;
+}

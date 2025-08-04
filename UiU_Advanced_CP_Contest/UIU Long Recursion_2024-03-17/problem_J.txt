@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+long long int total;
+/*void input(int t,int i,int j)
+{
+if(i>=t)return;
+else{}
+}*/
+int GCD(int i, int j) 
+{
+    int divident = max(i, j);
+    int divisor = min(i, j);
+    
+    if (divisor == 0)
+        return divident;
+    else
+    {
+        int mod = divident % divisor;
+        divident = divisor;
+        divisor = mod;
+       
+        return GCD(divident, divisor);
+    }
+}
+
+int main()
+ {
+    while(1)
+    {
+    int t;
+    cin >> t;
+    if(t==0)break;
+     total=0;  
+ for(int i=1;i<t;i++)
+ {
+    for(int j=i+1;j<=t;j++)
+    {
+        total=total+GCD(i,j);
+    }
+
+ }
+ cout<<total<<endl;
+    }
+    return 0;
+}
