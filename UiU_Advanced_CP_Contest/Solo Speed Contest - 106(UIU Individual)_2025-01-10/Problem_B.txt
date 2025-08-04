@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int a,b,c;
+    cin >> a>>b>>c;
+
+    int sum1=a+b;
+    int sum2=b+c;
+    int sub1=a-b;
+    int sub2=b-c;
+      int m1=a*b;
+    int m2=b*c;
+    int div1=a/b;
+     int div2=b/c;
+    if(sum1==c)
+    {
+     cout<<a<<"+"<<b<<"="<<c<<endl;
+    }
+    else if(a==sum2)
+    {
+
+      cout<<a<<"="<<b<<"+"<<c<<endl;
+    }
+    else if(sub1==c)
+    {
+      cout<<a<<"-"<<b<<"="<<c<<endl;
+    }
+    else if(a==sub2)
+    {
+        cout<<a<<"="<<b<<"-"<<c<<endl;
+    }
+    else if(m1==c)
+    {
+        cout<<a<<"*"<<b<<"="<<c<<endl;
+
+    }
+    else if(a==m2)
+    {
+              cout<<a<<"="<<b<<"*"<<c<<endl;
+
+    }
+    else if(div1==c)
+    {
+
+        cout<<a<<"/"<<b<<"="<<c<<endl;
+    }
+    else if(a==div2)
+    {
+      cout<<a<<"="<<b<<"/"<<c<<endl;
+
+    }
+
+
+
+    return 0;
+}
